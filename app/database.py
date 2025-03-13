@@ -8,8 +8,7 @@ import time
 from .config import settings
 
 # Encode password to handle special characters
-password = "longcute2512@"
-encoded_password = quote(password)
+encoded_password = quote(settings.database_password)
 
 SQLALCHEMY_DATABASE_URL = f'postgresql://{settings.database_username}:{encoded_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}'
 print(SQLALCHEMY_DATABASE_URL)
